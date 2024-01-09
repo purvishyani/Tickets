@@ -1,0 +1,61 @@
+<nz-modal [nzVisible]="isBadgeModalVisible" nzTitle="Add New Badge" (nzOnCancel)="handleCancel()">
+    <ng-container *nzModalContent>
+        <form nz-form #badgeForm="ngForm" [formGroup]="badgeFormData" (ngSubmit)="addBadge()">
+            <div class="badge-outer">
+                <label>Badge Title:</label>
+                <div class="badge-content">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please enter badge title">
+                            <input nz-input type="text" formControlName="badgeName">
+                        </nz-form-control>
+                    </nz-form-item>
+                    <button nz-button nzType="primary" type="submit" *ngIf="!isEdit">Add</button>
+                    <button nz-button nzType="primary" type="submit" *ngIf="isEdit">Edit</button>
+                </div>
+                <div class="color-picker">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please select badge color">
+                            <nz-radio-group nzSize="large" name="colorPicker" formControlName="badgecolor">
+                                <label class="a" nz-radio-button nzValue="#e4e5f1" value="#e4e5f1"></label>
+                                <label class="b" nz-radio-button nzValue="#f7c19b" value="#f7c19b"></label>
+                                <label class="c" nz-radio-button nzValue="#fffcb2" value="#fffcb2"></label>
+                                <label class="d" nz-radio-button nzValue="#dbffcd" value="#dbffcd"></label>
+                                <label class="e" nz-radio-button nzValue="#ffebad" value="#ffebad"></label>
+                                <label class="f" nz-radio-button nzValue="#cbfff5" value="#cbfff5"></label>
+                                <label class="g" nz-radio-button nzValue="#ffcd83" value="#ffcd83"></label>
+                                <label class="h" nz-radio-button nzValue="#fdb6b6" value="#fdb6b6"></label>
+                                <label class="i" nz-radio-button nzValue="#f0ffad" value="#f0ffad"></label>
+                                <label class="j" nz-radio-button nzValue="#d7c3f8" value="#d7c3f8"></label>
+                            </nz-radio-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <nz-divider></nz-divider>
+        </form>
+        <div class="badge-list">
+            <div nz-row [nzGutter]="[16,16]" *ngFor="let badge of badgeData ">
+                <div nz-col class="gutter-row" [nzSpan]="2">
+                    <div class="inner-box color-box" [ngStyle]="{'background-color':badge.badgecolor}"><span></span>
+                    </div>
+                </div>
+                <div nz-col class="gutter-row" [nzSpan]="18">
+                    <div class="inner-box">{{badge.badgeName}}</div>
+                </div>
+                <div nz-col class="gutter-row" [nzSpan]="2">
+                    <div class="inner-box" (click)="editBadge(badge.id)"><a><span nz-icon nzType="edit" nzTheme="outline"></span></a>
+                    </div>
+                </div>
+                <div nz-col class="gutter-row" [nzSpan]="2">
+                    <div class="inner-box">
+                        <a nz-popconfirm nzPopconfirmTitle="Are you sure to delete this badge?"
+                            nzPopconfirmPlacement="bottom" (nzOnConfirm)="deleteBadge(badge.id)"><span nz-icon nzType="delete" nzTheme="outline"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <div *nzModalFooter>
+        <button nz-button nzType="default" (click)="resetForm()">Cancel</button>
+    </div>
+</nz-modal>

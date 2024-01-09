@@ -1,0 +1,267 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "tickets": [
+    {
+      "firstName": "Purvi",
+      "lastName": "Pansuria",
+      "email": "purvi@yahoo.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": "23e37203-12d7-4f08-a385-040952359125"
+    },
+    {
+      "firstName": "Tejas",
+      "lastName": "Shyani",
+      "email": "tejas@yahoo.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": "23e37203-12d7-4f09-a385-040952359125"
+    },
+    {
+      "firstName": "Aarav",
+      "lastName": "Shyani",
+      "email": "aarav@yahoo.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": "23e37203-12d7-4f08-a394-040952359125"
+    },
+    {
+      "firstName": "Anvi",
+      "lastName": "Shyani",
+      "email": "anvi@gmail.com",
+      "password": "222",
+      "confirmPassword": "222",
+      "id": "53512834-6aa2-4ec8-9ff6-e18c1457df73"
+    },
+    {
+      "firstName": "Kritarth",
+      "lastName": "Patel",
+      "email": "patel@gmail.com",
+      "password": "333",
+      "confirmPassword": "333",
+      "id": "ee9072e9-69f2-4ee5-b615-01804d16c5f0"
+    },
+    {
+      "firstName": "Pinal",
+      "lastName": "Patel",
+      "email": "pinal@yahoo.com",
+      "password": "111",
+      "confirmPassword": "111",
+      "id": "0c741eb2-d215-4a18-b6ed-7e3037b7adb5"
+    },
+    {
+      "firstName": "Sweta",
+      "lastName": "Sirin",
+      "email": "sweta@gmail.com",
+      "password": "666",
+      "confirmPassword": "666",
+      "id": "ee9defff-10bd-4ede-8b1a-cc86263eece5"
+    }
+  ],
+  "badges": [
+    {
+      "badgeName": "sdkfjsdf",
+      "badgecolor": "#fffcb2",
+      "id": "8204cd5b-9703-4228-91b2-6f102c304a8e"
+    },
+    {
+      "badgeName": "fine",
+      "badgecolor": "#dbffcd",
+      "id": "WoTnjVj"
+    }
+  ],
+  "boards": [
+    {
+      "boardName": "TO DO1",
+      "boardColor": "#f7c19b",
+      "id": "bcd5e04b-f980-472c-94cc-5ab474696867"
+    },
+    {
+      "boardName": "TO DO",
+      "boardColor": "#e4e5f1",
+      "id": "50f3b7c2-b90a-497b-9a86-a61270c6bb43",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125",
+      "projectID": "0b160daa-e796-4f3e-8d5e-863eab35103f"
+    },
+    {
+      "boardName": "ON GOING",
+      "boardColor": "#fffcb2",
+      "id": "6207b856-16fa-412e-9f8c-aeb7fc9d7122",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125",
+      "projectID": "0b160daa-e796-4f3e-8d5e-863eab35103f"
+    },
+    {
+      "boardName": "ACTIVE",
+      "boardColor": "#f7c19b",
+      "id": "e04903c9-aeaa-4602-a452-2757652abecc"
+    },
+    {
+      "boardName": "DFDF",
+      "boardColor": "#dbffcd",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125",
+      "projectID": "8eb9e686-4dc4-43ab-88be-331306241a94",
+      "id": "ba18dfdf-2a10-42e5-97a5-eef2c398134b"
+    },
+    {
+      "boardName": "SDFSDF",
+      "boardColor": "#ffcd83",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125",
+      "projectID": "8eb9e686-4dc4-43ab-88be-331306241a94",
+      "id": "0280aecd-1812-405d-9220-c85b60dcfcbe"
+    }
+  ],
+  "projects": [
+    {
+      "selectedUsers": [
+        "Tejas",
+        "Anvi"
+      ],
+      "id": "4b2d39e5-b715-47ed-9a0b-fe0d79e7715f",
+      "projectName": "hhhhhh"
+    },
+    {
+      "projectName": "New mobile app development",
+      "selectedUsers": [
+        "Purvi",
+        "Aarav",
+        "Pinal",
+        "Kritarth"
+      ],
+      "id": "1ff57731-3332-4d3f-9f30-3f28bf32da93",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125"
+    },
+    {
+      "projectName": "Mobile application development",
+      "selectedUsers": [
+        "Purvi",
+        "Tejas",
+        "Sweta",
+        "Pinal",
+        "Aarav"
+      ],
+      "id": "0b160daa-e796-4f3e-8d5e-863eab35103f",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125"
+    },
+    {
+      "projectName": "Web application development",
+      "selectedUsers": [
+        "Aarav",
+        "Anvi",
+        "Kritarth"
+      ],
+      "id": "52b5920c-c64d-46f7-9e20-c4d8bcf17943",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125"
+    },
+    {
+      "projectName": "Project of making Chat ",
+      "selectedUsers": [
+        "Pinal",
+        "Kritarth",
+        "Anvi"
+      ],
+      "id": "ac1a6d74-40d0-450f-898d-2aafa41aac0c",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125"
+    },
+    {
+      "projectName": "fdgdg",
+      "selectedUsers": [
+        "Sweta",
+        "Kritarth",
+        "Anvi"
+      ],
+      "id": "ed190bbb-ac27-4a11-a9c7-7119e28cd052",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125"
+    },
+    {
+      "projectName": "kkkk",
+      "selectedUsers": [
+        "Anvi"
+      ],
+      "id": "e604d63f-c6cf-4fbc-8188-4cfa958a75a2",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125"
+    },
+    {
+      "projectName": "test Project",
+      "selectedUsers": [
+        "Aarav",
+        "Kritarth",
+        "Tejas",
+        "Anvi"
+      ],
+      "id": "8eb9e686-4dc4-43ab-88be-331306241a94",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125"
+    }
+  ],
+  "cards": [
+    {
+      "taskName": "zxzx",
+      "selectedUsers": [
+        "Anvi"
+      ],
+      "selectedBadges": [
+        {
+          "badgeName": "sdkfjsdf",
+          "badgeColor": "#fffcb2",
+          "badgeId": "8204cd5b-9703-4228-91b2-6f102c304a8e"
+        }
+      ],
+      "id": "2917deae-32b2-4f8e-9f82-5f86500a1c0a",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125",
+      "projectId": "8eb9e686-4dc4-43ab-88be-331306241a94",
+      "boardId": "ba18dfdf-2a10-42e5-97a5-eef2c398134b",
+      "cardIndex": 1
+    },
+    {
+      "taskName": "fgfgfg",
+      "selectedUsers": [
+        "Kritarth"
+      ],
+      "selectedBadges": [
+        {
+          "badgeName": "fine",
+          "badgeColor": "#dbffcd",
+          "badgeId": "WoTnjVj"
+        }
+      ],
+      "id": "10e68204-2be4-46da-afe9-2900d4daf614",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125",
+      "projectId": "8eb9e686-4dc4-43ab-88be-331306241a94",
+      "boardId": "0280aecd-1812-405d-9220-c85b60dcfcbe",
+      "cardIndex": 1
+    },
+    {
+      "taskName": "fddfg",
+      "selectedUsers": [
+        "Tejas"
+      ],
+      "selectedBadges": [
+        {
+          "badgeName": "sdkfjsdf",
+          "badgeColor": "#fffcb2",
+          "badgeId": "8204cd5b-9703-4228-91b2-6f102c304a8e"
+        }
+      ],
+      "id": "3ea08db3-3b4e-4746-a9db-e41ccc0748c7",
+      "loggedUserId": "23e37203-12d7-4f08-a385-040952359125",
+      "projectId": "8eb9e686-4dc4-43ab-88be-331306241a94",
+      "boardId": "0280aecd-1812-405d-9220-c85b60dcfcbe",
+      "cardIndex": 1
+    }
+  ]
+}

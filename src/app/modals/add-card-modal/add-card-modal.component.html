@@ -1,0 +1,35 @@
+<nz-modal #addNewCardModal [nzVisible]="isVisible" nzTitle="Add New Card" (nzOnCancel)="handleCancel()"
+    (nzOnOk)="addNewCardData()">
+    <form nz-form #newProjectForm="ngForm" [formGroup]="newCardFormData" (ngSubmit)="addNewCardData()">
+        <ng-container *nzModalContent>
+
+            <label>Card Title</label>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please enter card title! ">
+                    <input nz-input type="text" formControlName="taskName">
+                </nz-form-control>
+            </nz-form-item>
+
+            <label>Select Users</label>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please select users for the task!">
+                    <nz-select nzMode="multiple" nzPlaceHolder="Please select" formControlName="selectedUsers">
+                        <nz-option *ngFor="let item of usersList" [nzLabel]="item" [nzValue]="item"
+                            name="usersList"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+
+            <label>Select Badges</label>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please select badge(s)">
+                    <nz-select nzMode="multiple" nzPlaceHolder="Please select" formControlName="selectedBadges">
+                        <nz-option *ngFor="let item of badgesList" [nzLabel]="item.badgeName"
+                            [nzValue]="{ badgeName: item.badgeName, badgeColor: item.badgecolor, badgeId:item.id }"
+                            name="usersList"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+        </ng-container>
+    </form>
+</nz-modal>

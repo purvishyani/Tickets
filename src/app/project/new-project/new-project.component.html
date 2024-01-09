@@ -1,0 +1,111 @@
+<div class="wrapper">
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <span>Tasktis</span>
+                <span class="colored">.inc</span>
+            </div>
+            <div class="header-button">
+                <button class="btn-badge" (click)="showBadgeModal()" nz-button>Add Badge</button>
+                <button class="btn-new-project" nz-button nzType="primary" (click)="showNewProjectModal()">New
+                    Project
+                </button>
+            </div>
+        </div>
+        <nz-divider></nz-divider>
+        <ng-container *ngIf="!isVisible">
+            no data found
+        </ng-container>
+
+        <ng-container *ngIf="isVisible">
+            <div class="project-name">
+                <h2 nz-typography nzEditable [(nzContent)]="projectName"
+                    (nzContentChange)="updateProjectTitle(projectName)"></h2>
+            </div>
+            <div class="board-content">
+                <div class="members">
+                    <span>Members on boards</span>
+                    <div class="members-list">
+                        <nz-avatar-group>
+                            <nz-avatar style="background-color: #d94141" nzText="{{user}}"
+                                *ngFor="let user of selectedUsersOnProject"></nz-avatar>
+                            <nz-avatar style="background-color: #ffff; border:1px #d94141 solid; color: #d94141"
+                                nzText="+" nz-tooltip nzTooltipTitle="Click to edit users"
+                                (click)="showAddNewUserModal()"></nz-avatar>
+                        </nz-avatar-group>
+                    </div>
+                </div>
+                <div class="add-board">
+                    <button class="btn-new-project" nz-button nzType="primary" type="button"
+                        (click)="showNewBoardModal()">+
+                        New Boards</button>
+                </div>
+            </div>
+            <div class="task-boards" cdkDropListGroup>
+                <div *ngFor="let board of viewBoardData">
+                    <div class="card-outer">
+                        <div class="card-header">
+                            <div class="title">
+                                <span [ngStyle]="{'background-color':board.boardColor}">{{board.boardName}}</span>
+                            </div>
+                            <div class="edit-card">
+                                <a nz-dropdown [nzDropdownMenu]="menu">
+                                    ...
+                                </a>
+                                <nz-dropdown-menu #menu="nzDropdownMenu">
+                                    <ul nz-menu nzSelectable>
+                                        <li nz-menu-item (click)="showNewBoardModal('edit',board.id)">Edit</li>
+                                        <li nz-menu-item>
+                                            <a nz-popconfirm nzPopconfirmTitle="Are you sure delete this task?"
+                                                nzPopconfirmPlacement="bottom" (nzOnConfirm)="confirmDelete(board.id)">
+                                                Delete
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nz-dropdown-menu>
+                            </div>
+                        </div>
+                        <nz-divider></nz-divider>
+
+                        <div cdkDropList id="{{board.id}}" [cdkDropListData]="viewCardData"
+                            (cdkDropListDropped)="drop($event)">
+                            <div *ngFor="let card of viewCardData" class="card-content" cdkDrag>
+                                <div class="task-cards" *ngIf="board.id === card.boardId">
+                                    <nz-card>
+                                        <div class="card-badges">
+                                            <span *ngFor="let badge of card.selectedBadges"
+                                                [ngStyle]="{'background-color':badge.badgeColor}">{{badge.badgeName}}</span>
+                                        </div>
+                                        <div class="card-title">
+                                            <span>{{card.taskName}}</span>
+                                        </div>
+                                        <div class="card-task-users">
+                                            <span *ngFor="let user of card.selectedUsers">{{user}}</span>
+                                        </div>
+                                    </nz-card>
+                                </div>
+                            </div>
+                            <div class="add-card">
+                                <a (click)="showTaskCardModal(board.id)">+ Add Card</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<!-- ADD BADGE MODAL -->
+<app-add-badge-modal #badgeModal></app-add-badge-modal>
+
+<!-- NEW PROJECT MODAL -->
+<app-add-project-modal #addNewProjectModal (projectData)="showProjectData($event)"></app-add-project-modal>
+
+<!-- NEW BOARD MODAL -->
+<app-new-board-modal #addNewBoard (newBoardData)="showBoardData($event)"></app-new-board-modal>
+
+<!-- NEW CARD MODAL -->
+<app-add-card-modal #addNewCardModal (addNewCardModal)="showCardData($event)"></app-add-card-modal>
+
+<!-- ADD NEW USER MODAL -->
+<app-add-new-user-modal #addNewUserModal (addNewUserModal)="showProjectData($event)"></app-add-new-user-modal>

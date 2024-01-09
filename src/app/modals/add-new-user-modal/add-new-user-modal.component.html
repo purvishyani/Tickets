@@ -1,0 +1,18 @@
+<nz-modal #addNewUserModal [nzVisible]="isVisible" nzTitle="Add New User" (nzOnCancel)="handleCancel()"
+    (nzOnOk)="addNewUser()">
+    <form nz-form #newProjectForm="ngForm" [formGroup]="newUserFormData" (ngSubmit)="addNewUser()">
+        <ng-container *nzModalContent>
+
+            <label>Select Users</label>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please select user name">
+                    <nz-select nzMode="multiple" nzPlaceHolder="Please select" formControlName="selectedUsers">
+                        <nz-option *ngFor="let item of dummy" [nzLabel]="item" [nzValue]="item"
+                            name="usersList"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+        </ng-container>
+
+    </form>
+</nz-modal>

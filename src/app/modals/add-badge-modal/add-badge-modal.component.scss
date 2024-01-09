@@ -1,0 +1,75 @@
+.badge-content {
+    display: flex;
+
+    button {
+        background-color: #d94141;
+        border: none;
+        border-radius: 5px;
+    }
+
+    input {
+        margin-right: 3px;
+        border-radius: 5px;
+    }
+}
+
+nz-form-item {
+    width: 100%
+}
+
+.color-picker {
+    label {
+        width: 2.9rem;
+    }
+
+    .a {
+        background: #e4e5f1;
+    }
+
+    .b {
+        background: #f7c19b;
+    }
+
+    .c {
+        background: #fffcb2;
+    }
+
+    .d {
+        background: #dbffcd;
+    }
+
+    .e {
+        background: #ffebad;
+    }
+
+    .f {
+        background: #cbfff5;
+    }
+
+    .g {
+        background: #ffcd83;
+    }
+
+    .h {
+        background: #fdb6b6;
+    }
+
+    .i {
+        background: #f0ffad;
+    }
+
+    .j {
+        background: #d7c3f8;
+    }
+}
+
+.badge-list {
+    height: 9rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .color-box {
+        border-radius: 50%;
+        padding: 0.8rem;
+    }
+}

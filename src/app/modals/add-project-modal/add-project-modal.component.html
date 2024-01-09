@@ -1,0 +1,23 @@
+<nz-modal #addNewProjectModal [nzVisible]="isVisible" nzTitle="Add New Projet" (nzOnCancel)="resetFormData()"
+    (nzOnOk)="addNewProjectData()">
+    <form nz-form #newProjectForm="ngForm" [formGroup]="newProjectFormData" (ngSubmit)="addNewProjectData()">
+        <ng-container *nzModalContent>
+            <label>Project Title</label>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please enter project name">
+                    <input nz-input type="text" formControlName="projectName" placeholder="Project name" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <label>Select Users</label>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please select users">
+                    <nz-select nzMode="multiple" nzPlaceHolder="Please select" formControlName="selectedUsers">
+                        <nz-option *ngFor="let item of usersList" [nzLabel]="item.firstName" [nzValue]="item.firstName"
+                            name="usersList"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+        </ng-container>
+    </form>
+</nz-modal>

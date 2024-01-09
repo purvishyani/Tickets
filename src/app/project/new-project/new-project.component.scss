@@ -1,0 +1,220 @@
+.wrapper {
+    background-color: #fdfdfd;
+
+    .ant-divider-horizontal {
+        margin: 10px 0;
+    }
+
+    .header {
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        .logo {
+            span {
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+
+            .colored {
+                color: #d94141;
+            }
+        }
+
+        .header-button {
+            .btn-badge {
+                border: 0.2px solid #d94141;
+                color: #d94141;
+                margin-right: 3px;
+            }
+
+            .btn-badge:hover {
+                color: #c43d3d
+            }
+        }
+    }
+
+    button {
+        border: none;
+        border-radius: 5px;
+    }
+
+    .btn-new-project {
+        background-color: #d94141;
+    }
+
+    .btn-new-project:hover {
+        background-color: #cc5e5e;
+    }
+
+    .project-name {
+        padding: 0.5rem 0;
+        h2{
+            font-weight: bold;;
+        }
+
+    }
+
+    .board-content {
+        display: flex;
+        padding: 0.5rem 0;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        .members {
+            display: flex;
+            flex-direction: column;
+            margin-bottom:1rem;
+            span{
+                margin-bottom: 0.5rem;
+            }
+
+            .members-list {
+                display: flex;
+
+                a {
+                    .add-new {
+                        background-color: #c43d3d;
+                    }
+                }
+            }
+        }
+    }
+
+    .task-boards {
+        margin: 1rem 0;
+        display: flex;
+        max-width: 100%;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+
+        .example-list {
+            border: solid 1px #ccc;
+            min-height: 60px;
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .card-outer {
+            width: 16rem;
+            margin: 0 1rem;
+            margin-bottom: 1rem;
+
+            .ant-divider-horizontal {
+                margin: 10px 0;
+            }
+
+            .card-header {
+                margin-bottom: 0.3rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .title{
+                    span {
+                        padding: 5px 10px;
+                        background: rgb(195, 241, 108);
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                        border-radius: 5px;
+                    }
+                }
+                .edit-card{
+                    a{
+                        text-decoration: none;
+                        font-size: 1rem;
+                        color:rgb(179, 179, 179);
+                        font-weight: bold;
+                    }
+                }
+   
+            }
+
+            .add-card {
+
+                display: flex;
+                justify-content: center;
+
+                a {
+                    font-weight: 500;
+                }
+            }
+
+            .task-cards {
+
+                nz-card {
+                    border-radius: 1rem;
+                    margin-bottom: 0.7rem;
+                    border: none;
+                }
+              
+                .ant-card-body{
+                    padding:0;
+                }
+
+                .card-badges {
+                    span {
+                        font-size: 0.7rem;
+                        margin-right: 7px;
+                        margin-bottom: 5px;                       
+                        padding: 3px 6px;
+                        border-radius: 3px;
+                    }
+                }
+
+                .card-title {
+                    margin: 0.8rem 0;
+                    span {
+                        font-weight: 500;
+                        margin-right: 10px;
+                    }
+                }
+
+                .card-task-users {
+                    span {
+                        font-size: 0.7rem;
+                        margin-right: 7px;
+                    }
+                }
+
+            }
+            .cdk-drop-list{
+                border: 1px solid rgb(223, 223, 223);
+                border-radius: 1rem;
+                padding: 0.5rem;
+                background-color: #f9f9f9;
+            }
+        }
+    }
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+    border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+svg{
+    font-size: 1.2rem;
+}
